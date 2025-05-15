@@ -1,0 +1,266 @@
+﻿@model MyMvcProject.Models.AlbumMusicViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section MetaTags {
+ <meta name="description" content="وبسایت اختصاصی راد، هدف من از ساخت این وبسایت از بین بردن واسطه ها و ارتباط مستقیم با آرتیست مورد علاقه است.موزیک های خودم در این وبسایت، رایگان آپلود شده است">
+    
+    <!-- کلمات کلیدی (اختیاری، اما مفید) -->
+    <meta name="keywords" content="رادین, موزیک, آهنگ, راد,Radineh, RADMW, Radin Musics Web, دانلود آهنگ, موزیک جدید">
+    
+    <!-- نویسنده و مالک سایت -->
+    <meta name="author" content="رادین (Radin)">
+    
+    <!-- Open Graph Meta Tags (برای اشتراک‌گذاری در شبکه‌های اجتماعی) -->
+    <meta property="og:title" content="Radin Musics Web (RADMW)">
+    <meta property="og:description" content="دانلود و پخش موزیک‌های اختصاصی رادین اورجینال">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://radmw.com">
+    <meta property="og:image" content="https://radmw.com/images/logo.jpg">
+    <link rel="canonical" href="http://radmw.ir">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+}
+
+        <div class="content">
+            <div class="first-music-c" >
+                <img src="Images/end.jpg" alt="poster of music" class="fimage  rounded-3xl border-2  shadow-lg shadow-violet-500/50 border-white">
+                <div class="property-f-Music">
+                    <h1>
+                        <a name="firstMusic" class="ali">
+                            موزیک رادین
+                        </a>
+    
+                    </h1>
+                    <p class="discrip"> موزیک های سبک رپ،آر اند بی(R&B)،هیپ هاپ اختصاصی رادین</p>
+                    <!-- <div class="btn-music">
+                        <button class="Play">پخش</button>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <!-- <div class="myPropertyCount">
+                <h2>رادین کیست؟</h2>
+                <P class="myProperty">
+                به نام نور ایزدی
+    اینجانب محمد حسن حاکمی ملقب به رادین،برنامه نویس وب و سئو کار هستم.از سنین پایین علاقه مند به موزیک و خوانندگی بودم.اوایل اطرافیانم من را مسخره میکردند.ولی بعد از مدتی؛ دیگر کسی من را مسخره نکرد...
+    از آن پس تصمیم گرفتم که موزیک های خودم را در فضای مجازی: اینستگرام و ساندکلاد به اشتراک بگذارم؛ موزیک "شب برفی" به مناسبت شب یلدا سال 1403 محبوب ترین موزیک من شد. و به زودی آلبوم تغییر از "رادین" منتشر خواهد شد.
+    با یادگیری برنامه نویسی وب تصمیم گرفتم وبسایت شخصی خودمو با نام <abbr title="radin Musci's Web">«راد ام وی (radmw) »</abbr> بسازم. تا هم در قالب پروژه مهارت های خود را افزایش بدهم و هم رزومه ای برای خودم بسازم.
+    
+    متن،و تنظیم موزیک ها کاملا از خودم هستش و کاور نمیکنم.
+    
+                </P>
+            </div> -->
+                    <!-- top 5 musics -->
+            <div class="top5Musics">
+                <h2>
+                    پنج موزیک اخیر
+                </h2>
+                    
+                <div class="topMusic lamp active song view-button"  data-src="@Model.Musics[0].MusicPath" data-poster="@Model.Musics[0].PosterPath" data-name="@Model.Musics[0].Name"
+                 data-album="@Model.Musics[0].AlbumId" onclick="addView(@Model.Musics[0].Id)" >   
+                           <div class="poster-property">
+    
+                               <span class="num">
+                                01
+                               </span>
+                               <img src="<?php echo $musics[0]['poster'] ?>" alt="" class="hiddenposter">
+                               <div class="propertyTopMusic">
+               <a id="p1" name="p1">
+    
+    
+                   <h3 id="tiitle-1" name="tiitle-1" style="margin-top: 300px !important;">@Model.Musics[0].Name</h3>
+               </a>
+                               <p class="p"></p>
+                               </div>
+                               <div class="gifcont">
+                                <img src="Images/Mplay.png" alt="" class="gifplay">
+                               </div>
+    
+                           </div> 
+                           <div class="like-time">
+                               <p></p>
+                               <div class="like-play">
+    <?php
+                        $isLiked = in_array($musics[0]['ID'], $likedMusic);
+                        
+                        echo "<button class='likebutton' onclick='toggleLike(" . $musics[0]['ID'] . ")'>
+                        
+                                <span id='heart" . $musics[0]['ID'] . "'>" . ($isLiked ? '🧡' : '🤍') . "</span>
+                              </button>";
+                              
+                        
+    ?>
+                                   <button class="stopdown">
+    
+                                       <img src="Images/icons/play2.png" alt="" class="imgplay">
+                                   </button>
+                               </div>
+                            </div>  
+                            <div class="view-like"><p>تعداد بازدید: <span id='views-<?php echo $musics[0]['ID'] ?> '><?php  echo $musics[0]['view']  ?></span></p>
+    
+                             <p>تعداد لایک ها:<span id='likes<?php echo $musics[0]['ID'] ?>'><?php  echo $musics[0]['likes']  ?></span> </p>
+                            </div>
+                </div>
+                <div class="topMusic lamp active song view-button"  data-src="@Model.Musics[0].MusicPath" data-poster="<?php echo $musics[0]['poster'] ?>" data-name="<?php echo $musics[0]['name'] ?>"
+                 data-album="<?php echo $albums[0]['name'] ?>" onclick="addView(<?php echo $musics[0]['ID']; ?>)" >   
+                           <div class="poster-property">
+    
+                               <span class="num">
+                                01
+                               </span>
+                               <img src="<?php echo $musics[0]['poster'] ?>" alt="" class="hiddenposter">
+                               <div class="propertyTopMusic">
+               <a id="p1" name="p1">
+    
+    
+                   <h3 id="tiitle-1" name="tiitle-1" style="margin-top: 300px !important;">@Model.Musics[0].Name</h3>
+               </a>
+                               <p class="p"><?php echo $albums[0]['name'] ?></p>
+                               </div>
+                               <div class="gifcont">
+                                <img src="Images/Mplay.png" alt="" class="gifplay">
+                               </div>
+    
+                           </div> 
+                           <div class="like-time">
+                               <p><?php echo $musics[0]['time'] ?></p>
+                               <div class="like-play">
+    <?php
+                        $isLiked = in_array($musics[0]['ID'], $likedMusic);
+                        
+                        echo "<button class='likebutton' onclick='toggleLike(" . $musics[0]['ID'] . ")'>
+                        
+                                <span id='heart" . $musics[0]['ID'] . "'>" . ($isLiked ? '🧡' : '🤍') . "</span>
+                              </button>";
+                              
+                        
+    ?>
+                                   <button class="stopdown">
+    
+                                       <img src="Images/icons/play2.png" alt="" class="imgplay">
+                                   </button>
+                               </div>
+                            </div>  
+                            <div class="view-like"><p>تعداد بازدید: <span id='views-<?php echo $musics[0]['ID'] ?> '><?php  echo $musics[0]['view']  ?></span></p>
+    
+                             <p>تعداد لایک ها:<span id='likes<?php echo $musics[0]['ID'] ?>'><?php  echo $musics[0]['likes']  ?></span> </p>
+                            </div>
+                </div>
+                <div class="topMusic lamp active song view-button"  data-src="@Model.Musics[0].MusicPath" data-poster="<?php echo $musics[0]['poster'] ?>" data-name="<?php echo $musics[0]['name'] ?>"
+                 data-album="<?php echo $albums[0]['name'] ?>" onclick="addView(<?php echo $musics[0]['ID']; ?>)" >   
+                           <div class="poster-property">
+    
+                               <span class="num">
+                                01
+                               </span>
+                               <img src="<?php echo $musics[0]['poster'] ?>" alt="" class="hiddenposter">
+                               <div class="propertyTopMusic">
+               <a id="p1" name="p1">
+    
+    
+                   <h3 id="tiitle-1" name="tiitle-1" style="margin-top: 300px !important;">@Model.Musics[0].Name</h3>
+               </a>
+                               <p class="p"><?php echo $albums[0]['name'] ?></p>
+                               </div>
+                               <div class="gifcont">
+                                <img src="Images/Mplay.png" alt="" class="gifplay">
+                               </div>
+    
+                           </div> 
+                           <div class="like-time">
+                               <p><?php echo $musics[0]['time'] ?></p>
+                               <div class="like-play">
+    <?php
+                        $isLiked = in_array($musics[0]['ID'], $likedMusic);
+                        
+                        echo "<button class='likebutton' onclick='toggleLike(" . $musics[0]['ID'] . ")'>
+                        
+                                <span id='heart" . $musics[0]['ID'] . "'>" . ($isLiked ? '🧡' : '🤍') . "</span>
+                              </button>";
+                              
+                        
+    ?>
+                                   <button class="stopdown">
+    
+                                       <img src="Images/icons/play2.png" alt="" class="imgplay">
+                                   </button>
+                               </div>
+                            </div>  
+                            <div class="view-like"><p>تعداد بازدید: <span id='views-<?php echo $musics[0]['ID'] ?> '><?php  echo $musics[0]['view']  ?></span></p>
+    
+                             <p>تعداد لایک ها:<span id='likes<?php echo $musics[0]['ID'] ?>'><?php  echo $musics[0]['likes']  ?></span> </p>
+                            </div>
+                </div>
+                
+    
+            </div>
+            <!-- Albums  -->
+            <a class="text-for-slider ali" name="Albums">
+                
+                    آلبوم ها
+                
+            </a>
+            <div class="container">
+                
+                <div class="cards">
+                    <div class="item">
+                        <img src="" alt="image1">
+                        
+                    </div>
+                    <div class="item">
+                        <img src="" alt="image2">
+                    </div>
+                    <div class="item">
+                        <img src="./images/Captain America.png" alt="image3">
+                    </div>
+    
+                </div>
+                <div class="buttons">
+                    <div class="next btn"></div>
+                    <div class="prev btn"></div>
+                </div>
+    
+            </div>
+    
+            <div class="nextcontent">
+                <div class="propertyAlbums">
+                    <div class="prop-one-Album">
+                        <h3>تغییر</h3>
+                        <p>اولین آلبوم رسمی من</p>
+                    </div>
+                    <div class="prop-one-Album">
+                        <h3>مرز تاریک</h3>
+                        <p>بیشتر تکس هایش را نوشتم در سبک رپ اعتراضی و گنگ است</p>
+                    </div>
+                    <div class="prop-one-Album">
+                        <h3>به زودی</h3>
+                        <p>برای اسم و سبک این آهنگ در تلگرام پیام دهید</p>
+                    </div>
+                    <!-- <div class="prop-one-Album">
+                        <h3>ییر</h3>
+                        <p>اولین آلبوم رsdssسمی من</p>
+                    </div>
+                    <div class="prop-one-Album">
+                        <h3>شهوت</h3>
+                        <p>اولین آلبوم رسمی من</p>
+                    </div>
+                    <div class="prop-one-Album">
+                        <h3>حسرت</h3>
+                        <p>اولین آلبوم رسمی من</p>
+                    </div>
+                    <div class="prop-one-Album">
+                        <h3>بیعت</h3>
+                        <p>اولین آلبوم رسمی من</p>
+                    </div>
+                    <div class="prop-one-Album">
+                        <h3>بیعت</h3>
+                        <p>اولین آلبوم رسمی من</p>
+                    </div> -->
+    
+                </div>
+    
+                <div class="prev btn"></div>
+            </div>
+    
+            
+            </div>

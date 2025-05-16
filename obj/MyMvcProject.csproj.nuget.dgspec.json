@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\My Projcts\\coding\\new\\MyMvcProject\\MyMvcProject.csproj": {}
+    "E:\\My Projcts\\coding\\New folder\\radmwBackASP.net\\MyMvcProject.csproj": {}
   },
   "projects": {
-    "E:\\My Projcts\\coding\\new\\MyMvcProject\\MyMvcProject.csproj": {
+    "E:\\My Projcts\\coding\\New folder\\radmwBackASP.net\\MyMvcProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\My Projcts\\coding\\new\\MyMvcProject\\MyMvcProject.csproj",
+        "projectUniqueName": "E:\\My Projcts\\coding\\New folder\\radmwBackASP.net\\MyMvcProject.csproj",
         "projectName": "MyMvcProject",
-        "projectPath": "E:\\My Projcts\\coding\\new\\MyMvcProject\\MyMvcProject.csproj",
+        "projectPath": "E:\\My Projcts\\coding\\New folder\\radmwBackASP.net\\MyMvcProject.csproj",
         "packagesPath": "C:\\Users\\NEW\\.nuget\\packages\\",
-        "outputPath": "E:\\My Projcts\\coding\\new\\MyMvcProject\\obj\\",
+        "outputPath": "E:\\My Projcts\\coding\\New folder\\radmwBackASP.net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NEW\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -2119,11 +2119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\My Projcts\\coding\\asp.net\\MyMvcProject\\MyMvcProject.csproj",
+      "projectUniqueName": "E:\\My Projcts\\coding\\new\\MyMvcProject\\MyMvcProject.csproj",
       "projectName": "MyMvcProject",
-      "projectPath": "E:\\My Projcts\\coding\\asp.net\\MyMvcProject\\MyMvcProject.csproj",
+      "projectPath": "E:\\My Projcts\\coding\\new\\MyMvcProject\\MyMvcProject.csproj",
       "packagesPath": "C:\\Users\\NEW\\.nuget\\packages\\",
-      "outputPath": "E:\\My Projcts\\coding\\asp.net\\MyMvcProject\\obj\\",
+      "outputPath": "E:\\My Projcts\\coding\\new\\MyMvcProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\NEW\\AppData\\Roaming\\NuGet\\NuGet.Config"

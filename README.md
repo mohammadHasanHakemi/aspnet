@@ -33,3 +33,5 @@ ON DELETE NO ACTION;
 -- اطمینان از این که تغییرات به درستی اعمال شده‌اند
 SHOW TABLE STATUS WHERE Name IN ('Albums', 'Musics');
 }
+ssd
+sd
